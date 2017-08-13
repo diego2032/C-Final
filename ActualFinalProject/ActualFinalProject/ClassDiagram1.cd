@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ActualFinalProject.RouteConfig">
+    <Position X="12.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.MvcApplication">
+    <Position X="14" Y="7.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.OnlineShopDBEntities">
+    <Position X="9.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAACAAAABAAAAAAEAAASBAAAAAIEAAAAAA=</HashCode>
+      <FileName>OnlineShopDBModel.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Image">
+    <Position X="0.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Image.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Item">
+    <Position X="6.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAACBAAAgAAAADAAAAAAAQACABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.ItemCategory">
+    <Position X="14.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAiAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ItemCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Order">
+    <Position X="15.25" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>CAABAAAAAAAAgAAAAhAAAAgQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Order.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.OrderDetail">
+    <Position X="3.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAABAAAAAAAAAAgAAAAAAEAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>OrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.OrderType">
+    <Position X="11.75" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>OrderType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.sysdiagram">
+    <Position X="12.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAIAAAAAAAAAAAAAAAQAAAFAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>sysdiagram.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.User">
+    <Position X="10" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAgAACAQAAAAAAAAAACAACAAAAAAAAAAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.UserType">
+    <Position X="3.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>UserType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.CartController">
+    <Position X="14" Y="9.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAQBACAAAAAAAAAAAEgAAACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CartController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.ControllerExtensions">
+    <Position X="14" Y="8.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ControllerExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.HomeController">
+    <Position X="12.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.ImagesController">
+    <Position X="9" Y="10" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ImagesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.ItemCategoriesController">
+    <Position X="6.25" Y="10" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ItemCategoriesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.ItemsController">
+    <Position X="12.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ItemsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.LoginController">
+    <Position X="3.5" Y="0.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAUAABAAAAAAAAAAAAAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.LogoutController">
+    <Position X="5.5" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAYAAAEAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LogoutController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.ManagementController">
+    <Position X="11.75" Y="8" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ManagementController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.OrderDetailsController">
+    <Position X="3.5" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrderDetailsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.OrdersController">
+    <Position X="6.25" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrdersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.OrderTypesController">
+    <Position X="3.5" Y="10" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\OrderTypesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.StoreController">
+    <Position X="0.5" Y="6" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\StoreController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.UnauthorizedController">
+    <Position X="6.5" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Controllers\UnauthorizedController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.UsersController">
+    <Position X="9" Y="7" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UsersController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Controllers.UserTypesController">
+    <Position X="0.5" Y="8" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACARAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserTypesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Models.CartModel">
+    <Position X="7.75" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAABAAgAAAAAAAAAAAAAgQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CartModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Models.CheckoutModel">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\CheckoutModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.Models.StoreModel">
+    <Position X="14" Y="5.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAAAEAAAAEAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\StoreModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ActualFinalProject.CalculateTotalsReference.CalculateTotalsSoapClient" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\CalculateTotalsReference\Reference.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="ActualFinalProject.CalculateTotalsReference.CalculateTotalsSoap" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\CalculateTotalsReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ActualFinalProject.CalculateTotalsReference.CalculateTotalsSoapChannel" Collapsed="true">
+    <Position X="0.5" Y="1.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service References\CalculateTotalsReference\Reference.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

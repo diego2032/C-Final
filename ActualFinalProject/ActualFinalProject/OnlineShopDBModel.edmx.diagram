@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7794e8e1ae30414684e93c804b114343" Name="Diagram1">
+        <EntityTypeShape EntityType="OnlineShopDBModel.Image" Width="1.5" PointX="3" PointY="8.625" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.Item" Width="1.5" PointX="5.25" PointY="9.25" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.ItemCategory" Width="1.5" PointX="3" PointY="11" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.Order" Width="1.5" PointX="5.25" PointY="1" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.OrderDetail" Width="1.5" PointX="7.5" PointY="1.125" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.OrderType" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.User" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="OnlineShopDBModel.UserType" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_Image_Item" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_Item_OrderDetails" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_ItemCategory_Item" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_Order_OrderDetails" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_Order_OrderType" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_Order_User" />
+        <AssociationConnector Association="OnlineShopDBModel.FK_UserType_User" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

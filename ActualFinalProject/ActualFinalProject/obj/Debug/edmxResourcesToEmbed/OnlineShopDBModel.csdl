@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OnlineShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="OnlineShopDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Images" EntityType="OnlineShopDBModel.Image" />
+    <EntitySet Name="Items" EntityType="OnlineShopDBModel.Item" />
+    <EntitySet Name="ItemCategories" EntityType="OnlineShopDBModel.ItemCategory" />
+    <EntitySet Name="Orders" EntityType="OnlineShopDBModel.Order" />
+    <EntitySet Name="OrderDetails" EntityType="OnlineShopDBModel.OrderDetail" />
+    <EntitySet Name="OrderTypes" EntityType="OnlineShopDBModel.OrderType" />
+    <EntitySet Name="sysdiagrams" EntityType="OnlineShopDBModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="OnlineShopDBModel.User" />
+    <EntitySet Name="UserTypes" EntityType="OnlineShopDBModel.UserType" />
+    <AssociationSet Name="FK_Image_Item" Association="OnlineShopDBModel.FK_Image_Item">
+      <End Role="Image" EntitySet="Images" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_OrderDetails" Association="OnlineShopDBModel.FK_Item_OrderDetails">
+      <End Role="Item" EntitySet="Items" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemCategory_Item" Association="OnlineShopDBModel.FK_ItemCategory_Item">
+      <End Role="ItemCategory" EntitySet="ItemCategories" />
+      <End Role="Item" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrderDetails" Association="OnlineShopDBModel.FK_Order_OrderDetails">
+      <End Role="Order" EntitySet="Orders" />
+      <End Role="OrderDetail" EntitySet="OrderDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrderType" Association="OnlineShopDBModel.FK_Order_OrderType">
+      <End Role="OrderType" EntitySet="OrderTypes" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_User" Association="OnlineShopDBModel.FK_Order_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserType_User" Association="OnlineShopDBModel.FK_UserType_User">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ImageLocation" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Items" Relationship="OnlineShopDBModel.FK_Image_Item" FromRole="Image" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ItemName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemPrice" Type="Int32" Nullable="false" />
+    <Property Name="ImageID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Image" Relationship="OnlineShopDBModel.FK_Image_Item" FromRole="Item" ToRole="Image" />
+    <NavigationProperty Name="OrderDetails" Relationship="OnlineShopDBModel.FK_Item_OrderDetails" FromRole="Item" ToRole="OrderDetail" />
+    <NavigationProperty Name="ItemCategory" Relationship="OnlineShopDBModel.FK_ItemCategory_Item" FromRole="Item" ToRole="ItemCategory" />
+  </EntityType>
+  <EntityType Name="ItemCategory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Items" Relationship="OnlineShopDBModel.FK_ItemCategory_Item" FromRole="ItemCategory" ToRole="Item" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="OrderDetails" Relationship="OnlineShopDBModel.FK_Order_OrderDetails" FromRole="Order" ToRole="OrderDetail" />
+    <NavigationProperty Name="OrderType" Relationship="OnlineShopDBModel.FK_Order_OrderType" FromRole="Order" ToRole="OrderType" />
+    <NavigationProperty Name="User" Relationship="OnlineShopDBModel.FK_Order_User" FromRole="Order" ToRole="User" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ItemID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Item" Relationship="OnlineShopDBModel.FK_Item_OrderDetails" FromRole="OrderDetail" ToRole="Item" />
+    <NavigationProperty Name="Order" Relationship="OnlineShopDBModel.FK_Order_OrderDetails" FromRole="OrderDetail" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="OrderType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="OnlineShopDBModel.FK_Order_OrderType" FromRole="OrderType" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="OnlineShopDBModel.FK_Order_User" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="UserType" Relationship="OnlineShopDBModel.FK_UserType_User" FromRole="User" ToRole="UserType" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Users" Relationship="OnlineShopDBModel.FK_UserType_User" FromRole="UserType" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Image_Item">
+    <End Type="OnlineShopDBModel.Image" Role="Image" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.Item" Role="Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="ImageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_OrderDetails">
+    <End Type="OnlineShopDBModel.Item" Role="Item" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Item">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemCategory_Item">
+    <End Type="OnlineShopDBModel.ItemCategory" Role="ItemCategory" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.Item" Role="Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategory">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrderDetails">
+    <End Type="OnlineShopDBModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.OrderDetail" Role="OrderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="OrderDetail">
+        <PropertyRef Name="OrderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrderType">
+    <End Type="OnlineShopDBModel.OrderType" Role="OrderType" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_User">
+    <End Type="OnlineShopDBModel.User" Role="User" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserType_User">
+    <End Type="OnlineShopDBModel.UserType" Role="UserType" Multiplicity="1" />
+    <End Type="OnlineShopDBModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
