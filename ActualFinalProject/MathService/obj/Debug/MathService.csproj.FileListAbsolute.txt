@@ -1,5 +1,0 @@
-C:\Users\Diego\Source\Repos\FinalProject\ActualFinalProject\MathService\bin\MathService.dll.config
-C:\Users\Diego\Source\Repos\FinalProject\ActualFinalProject\MathService\bin\MathService.dll
-C:\Users\Diego\Source\Repos\FinalProject\ActualFinalProject\MathService\bin\MathService.pdb
-C:\Users\Diego\Source\Repos\FinalProject\ActualFinalProject\MathService\obj\Debug\MathService.dll
-C:\Users\Diego\Source\Repos\FinalProject\ActualFinalProject\MathService\obj\Debug\MathService.pdb
