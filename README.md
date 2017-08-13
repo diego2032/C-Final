@@ -1,2 +1,2 @@
 # C-Final
-Best group (probably)
+Worst group (probably)
