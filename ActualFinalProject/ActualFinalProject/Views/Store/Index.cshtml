@@ -1,0 +1,53 @@
+﻿@model ActualFinalProject.Models.StoreModel
+@{
+    ViewBag.Title = "Store";
+}
+<h2>Store</h2>
+<p>Sort by: 
+    <span>@Html.ActionLink("all", "Index")</span>
+    @foreach (var category in Model.Categories)
+{
+    <span>@Html.ActionLink(category.Name, "SortBy", new { id = category.ID })</span>
+}   
+</p>
+<ul class="products">
+@foreach (var item in Model.Items)
+{
+    <li style="width: 450px;display: inline-block;vertical-align: top;*display: inline;*zoom: 1;list-style: none;">
+        <img src="@Html.DisplayFor(modelItem => item.Image.ImageLocation)" width="300px" height="200px"/>
+        <details>
+            <summary style="font-size: 2em;">@Html.DisplayFor(modelItem => item.ItemName)</summary>
+            <p>Description: @Html.DisplayFor(modelItem => item.ItemDescription)</p>
+            <p>Category: @Html.DisplayFor(modelItem => item.ItemCategory.Name)</p>
+        </details>
+        <p>Price: $@Html.DisplayFor(modelItem => item.ItemPrice)</p>
+        @using (Html.BeginForm()) 
+        {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" hidden>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Item.ID, new { Value = item.ID })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-2">
+                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control", min = 1} })
+                        @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Add to Cart" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </li>            
+}
+</ul>

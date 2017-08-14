@@ -1,0 +1,8 @@
+﻿@model ActualFinalProject.Models.CheckoutModel
+@{
+    ViewBag.Title = "Checkout";
+}
+
+<h2>Checkout</h2>
+<p>Your order total: $@Model.Total</p>
+@Html.ActionLink("Finalize Order", "CompleteOrder", new {id = Model.OrderId})

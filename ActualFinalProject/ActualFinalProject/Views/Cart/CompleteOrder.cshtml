@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "CompleteOrder";
+}
+<meta http-equiv="refresh" content="1; url=/Home" />
+
+@{
+    if (ViewBag.Message != null)
+    {
+        <h2>@ViewBag.Message</h2>
+    }
+    else
+    {
+        <h2>Order successfully completed</h2>        
+    }
+}
+<p>Redirecting to home page...</p>

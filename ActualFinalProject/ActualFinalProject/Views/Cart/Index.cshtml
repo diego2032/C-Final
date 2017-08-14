@@ -1,0 +1,61 @@
+﻿@model ActualFinalProject.Models.CartModel
+
+@{
+    ViewBag.Title = "Your Cart";
+}
+
+<h2>Your Cart</h2>
+<hr/>
+@Html.ActionLink("View Previous Order(s)", "GetOrders")
+@{if (Model == null || Model.CartItems.Count == 0)
+{
+    <h2>Your Cart is Empty</h2>
+}
+else {
+    <p>Order Date: @Html.DisplayFor(model => model.OrderDate)</p>
+    <table class="table">
+    
+        <tr>
+            <th>
+                Item Name
+            </th>
+            <th>
+                Item Price
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Subtotal
+            </th>
+            <th></th>
+        </tr>
+        @{decimal total = 0;}
+        @foreach (var item in Model.CartItems)
+        {
+            decimal a = decimal.Parse(@Html.DisplayFor(modelItem => item.Quantity).ToString()) * decimal.Parse(@Html.DisplayFor(modelItem => item.Item.ItemPrice).ToString());
+            total += a;
+            <tr>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Item.ItemName)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Item.ItemPrice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    $@a
+                </td>
+                <td>
+                    @Html.ActionLink("Edit | ", "Edit", new { id = Model.OrderID, id2 = item.ItemID })                  
+                    @Html.ActionLink("Delete", "Delete", new { id = Model.OrderID, id2 = item.ItemID })
+                </td>
+            </tr>
+        }      
+    </table>
+    @Html.ActionLink("Checkout", "Checkout", new { orderId = Model.OrderID, subtotal = total })
+            }
+}
